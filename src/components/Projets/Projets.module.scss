@@ -69,6 +69,10 @@
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-5px);
@@ -77,6 +81,15 @@
 
     .links {
       opacity: 1;
+    }
+
+    .readMore {
+      opacity: 1;
+      transform: translateX(0);
+
+      svg {
+        transform: translateX(5px);
+      }
     }
   }
 
@@ -166,6 +179,17 @@
   text-decoration: none;
   color: inherit;
   display: block;
+  height: 100%;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mainContent {
+  flex: 1;
 
   h3 {
     font-size: var(--text-xl);
@@ -173,6 +197,35 @@
     color: var(--text-color);
     margin-bottom: 0.5rem;
   }
+}
+
+.readMore {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: var(--accent-color);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  opacity: 0.6;
+  transform: translateX(-3px);
+  transition: all 0.3s ease;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+}
+
+.inProgress {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(var(--accent-rgb), 0.15);
+  color: var(--accent-color);
+  border-radius: 2px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--accent-color);
 }
 
 .description {
