@@ -1,95 +1,168 @@
+'use client';
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import { motion } from "framer-motion";
+import styles from "./home.module.scss";
+import Skills from "@/components/Skills/Skills";
+import Contact from "@/components/Contact/Contact";
+import Parcours from "@/components/Parcours/Parcours";
+import Projets from "@/components/Projets/Projets";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.6
+      }
+    }
+  };
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const itemVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 20
+    },
+    visible: { 
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: 0.8,
+      rotate: -5
+    },
+    visible: { 
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+        delay: 0.1
+      }
+    }
+  };
+
+  const qualityCardVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 30,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  return (
+    <main className={styles.home}>
+      <section className={styles.hero} id="accueil">
+        <motion.div 
+          className={styles.heroContent}
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          <motion.h1 variants={itemVariants}>Freddy Belz</motion.h1>
+          <motion.p className={styles.subtitle} variants={itemVariants}>
+            Développeur Web
+          </motion.p>
+          <motion.p className={styles.description} variants={itemVariants}>
+            Étudiant passionné par le développement web et le design d&apos;interfaces, je conçois des expériences numériques modernes, à la croisée de l&apos;esthétique et de la performance. 
+            Actuellement spécialisé en React et Next.js, je suis à la recherche d&apos;une alternance pour continuer à progresser en équipe et contribuer à des projets concrets.
+          </motion.p>
+          <motion.div 
+            className={styles.qualities}
+            variants={containerVariants}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            {[
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                ),
+                title: "Full Stack",
+                description: "Maîtrise complète du développement, du front-end au back-end"
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 16v-4M12 8h.01"/>
+                  </svg>
+                ),
+                title: "UI/UX Design",
+                description: "Création d'interfaces intuitives et d'expériences utilisateur fluides"
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                ),
+                title: "Performance",
+                description: "Optimisation des performances et des bonnes pratiques de développement"
+              }
+            ].map((quality, index) => (
+              <motion.div
+                key={quality.title}
+                variants={qualityCardVariants}
+                custom={index}
+                transition={{ delay: 0.8 + index * 0.2 }}
+              >
+                <div className={styles.qualityCard}>
+                  {quality.icon}
+                  <h3>{quality.title}</h3>
+                  <p>{quality.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          className={styles.imageWrapper}
+          initial="hidden"
+          animate="visible"
+          variants={imageVariants}
         >
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/images/profile.jpg"
+            alt="Freddy Belz"
+            width={500}
+            height={500}
+            priority
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </motion.div>
+      </section>
+
+      <Skills />
+
+      <Parcours/>
+      
+      <Projets />
+
+      <Contact />
+    </main>
   );
 }

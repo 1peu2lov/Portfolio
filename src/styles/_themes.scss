@@ -1,0 +1,80 @@
+// Thème sombre (Dark theme)
+$dark-theme: (
+  bg: #090805,
+  bg-rgb: "9, 8, 5",
+  surface: #2f2f2f,
+  border: #3b3b3b,
+  text: #f7f4de,
+  text-rgb: "247, 244, 222",
+  muted: #cfcfcf,
+  accent: #dba354,
+  accent-bright: #e4c07a,
+  bar-debutant: rgba(247, 244, 222, 0.2),
+  bar-intermediaire: rgba(247, 244, 222, 0.5),
+  bar-confirme: rgba(247, 244, 222, 0.7),
+  bar-expert: rgba(247, 244, 222, 0.95)
+);
+
+// Thème clair (Light theme)
+$light-theme: (
+  bg: #f7f4de,
+  bg-rgb: "247, 244, 222",
+  surface: #f5f5f5,
+  border: #e5e5e5,
+  text: #090805,
+  text-rgb: "9, 8, 5",
+  muted: #666666,
+  accent: #c17f59,
+  accent-bright: #dba354,
+  bar-debutant: rgba(9, 8, 5, 0.2),
+  bar-intermediaire: rgba(9, 8, 5, 0.5),
+  bar-confirme: rgba(9, 8, 5, 0.7),
+  bar-expert: rgba(9, 8, 5, 0.95)
+);
+
+:root[data-theme='dark'] {
+  @each $key, $value in $dark-theme {
+    --#{$key}: #{$value};
+  }
+}
+
+:root[data-theme='light'] {
+  @each $key, $value in $light-theme {
+    --#{$key}: #{$value};
+  }
+}
+
+// Pour la compatibilité avec le système de préférence de couleur
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    @each $key, $value in $light-theme {
+      --#{$key}: #{$value};
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @each $key, $value in $dark-theme {
+      --#{$key}: #{$value};
+    }
+  }
+}
+
+// Mixin pour accéder aux couleurs du thème
+@mixin themed() {
+  @media (prefers-color-scheme: light) {
+    $theme: $light-theme !global;
+    @content;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    $theme: $dark-theme !global;
+    @content;
+  }
+}
+
+// Fonction pour obtenir une couleur du thème actif
+@function theme-color($key) {
+  @return map-get($theme, $key);
+} 

@@ -1,0 +1,46 @@
+@use "../../styles/themes" as *;
+
+.toggle {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  
+  &:hover {
+    background-color: var(--border-color);
+  }
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .toggle {
+    padding: 0.4rem;
+
+    svg {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle {
+    padding: 0.3rem;
+
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+} 

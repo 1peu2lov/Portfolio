@@ -1,0 +1,156 @@
+/* Système typographique
+   Échelle de taille : 1.250 (Major Third) */
+
+:root {
+  /* Tailles de base */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.563rem;   /* 25px */
+  --text-2xl: 1.953rem;  /* 31px */
+  --text-3xl: 2.441rem;  /* 39px */
+  --text-4xl: 3.052rem;  /* 49px */
+  --text-5xl: 3.815rem;  /* 61px */
+
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* Espacements (marges) */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+}
+
+/* Styles des titres */
+h1, .h1 {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+h2, .h2 {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+h3, .h3 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h4, .h4 {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h5, .h5 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+h6, .h6 {
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+/* Styles du corps de texte */
+p, .body-large {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+  margin-bottom: 1.5rem;
+}
+
+.body-default {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  margin-bottom: 1rem;
+}
+
+.body-small {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: 0.75rem;
+}
+
+.caption {
+  font-size: var(--text-xs);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-wider);
+  font-weight: 500;
+}
+
+/* Classes utilitaires */
+.text-bold {
+  font-weight: 700;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  :root {
+    --text-5xl: 3.052rem;  /* Réduit de 61px à 49px */
+    --text-4xl: 2.441rem;  /* Réduit de 49px à 39px */
+    --text-3xl: 1.953rem;  /* Réduit de 39px à 31px */
+    --text-2xl: 1.563rem;  /* Réduit de 31px à 25px */
+    --text-xl: 1.25rem;    /* Réduit de 25px à 20px */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-5xl: 2.441rem;  /* Réduit encore plus pour mobile */
+    --text-4xl: 1.953rem;
+    --text-3xl: 1.563rem;
+    --text-2xl: 1.25rem;
+    --text-xl: 1.125rem;
+  }
+} 

@@ -1,0 +1,64 @@
+@use "../styles/themes" as *;
+@use "../styles/fonts";
+@use "../styles/typography";
+
+/* Thème clair par défaut */
+body {
+  --bg-color: #{map-get($light-theme, bg)};
+  --bg-rgb: #{map-get($light-theme, bg-rgb)};
+  --surface-color: #{map-get($light-theme, surface)};
+  --border-color: #{map-get($light-theme, border)};
+  --text-color: #{map-get($light-theme, text)};
+  --muted-color: #{map-get($light-theme, muted)};
+  --accent-color: #{map-get($light-theme, accent)};
+}
+
+/* Thème sombre */
+body[data-theme="dark"] {
+  --bg-color: #{map-get($dark-theme, bg)};
+  --bg-rgb: #{map-get($dark-theme, bg-rgb)};
+  --surface-color: #{map-get($dark-theme, surface)};
+  --border-color: #{map-get($dark-theme, border)};
+  --text-color: #{map-get($dark-theme, text)};
+  --muted-color: #{map-get($dark-theme, muted)};
+  --accent-color: #{map-get($dark-theme, accent)};
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-barlow);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Transition douce lors du changement de thème */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* S'assurer que tous les éléments héritent de la transition */
+* {
+  transition: inherit;
+}
+
