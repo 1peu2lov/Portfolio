@@ -32,35 +32,6 @@ $light-theme: (
   bar-expert: rgba(9, 8, 5, 0.95)
 );
 
-:root[data-theme='dark'] {
-  @each $key, $value in $dark-theme {
-    --#{$key}: #{$value};
-  }
-}
-
-:root[data-theme='light'] {
-  @each $key, $value in $light-theme {
-    --#{$key}: #{$value};
-  }
-}
-
-// Pour la compatibilité avec le système de préférence de couleur
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    @each $key, $value in $light-theme {
-      --#{$key}: #{$value};
-    }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    @each $key, $value in $dark-theme {
-      --#{$key}: #{$value};
-    }
-  }
-}
-
 // Mixin pour accéder aux couleurs du thème
 @mixin themed() {
   @media (prefers-color-scheme: light) {

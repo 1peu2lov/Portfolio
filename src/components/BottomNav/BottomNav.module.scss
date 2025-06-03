@@ -12,7 +12,7 @@
   border: 1px solid rgba(var(--bg-rgb), 0.1);
   padding: 2.5rem 2rem 2.5rem 2rem;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   height: 4rem;
   box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
@@ -115,12 +115,12 @@
   }
 }
 
-/* Ajustement du padding en bas du contenu principal pour éviter que la navigation ne cache du contenu */
-:global(main) {
-  padding-bottom: 1rem !important;
+.mainContent {
+  :global(main) {
+    padding-bottom: 1rem !important;
+  }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .bottomNav {
     width: 95%;
@@ -135,7 +135,9 @@
     gap: 0.1rem;
   }
 
-  :global(main) {
-    padding-bottom: 0rem !important;
+  .mainContent {
+    :global(main) {
+      padding-bottom: 0rem !important;
+    }
   }
 } 
