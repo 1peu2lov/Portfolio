@@ -22,7 +22,7 @@ export const metadata = {
     siteName: 'Portfolio Freddy Belz',
     images: [
       {
-        url: '/images/og-image.png',
+        url: 'https://freddy-belz-portfolio.netlify.app/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Freddy Belz Portfolio'
