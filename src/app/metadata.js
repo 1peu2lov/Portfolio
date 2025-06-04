@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Freddy Belz | Développeur Front-End',
+  title: 'Freddy Belz | Développeur Web',
   description: "Portfolio de Freddy Belz, développeur web passionné par les interfaces modernes, React, Next.js et le design d'expérience.",
   keywords: [
     "Freddy Belz",
