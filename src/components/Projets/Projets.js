@@ -1,18 +1,36 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Projets.module.scss';
 import { projects } from '@/data/projects';
 
 export default function Projets() {
   const [selectedTag, setSelectedTag] = useState('Tous');
-  const tags = ['Tous', 'Dev', 'Design', 'Jeu', 'Projet 360°', 'UX/UI'];
+  const [showAll, setShowAll] = useState(false);
+  const tags = ['Tous', 'Dev', 'Design', 'Jeu', 'Projet 360°', 'UX/UI', 'Recherche', 'Print'];
+
+  useEffect(() => {
+    setShowAll(false);
+  }, [selectedTag]);
 
   const filteredProjects = selectedTag === 'Tous'
-    ? projects
-    : projects.filter(project => project.tags.includes(selectedTag));
+    ? projects.sort((a, b) => a.order - b.order)
+    : projects.filter(project => project.tags.includes(selectedTag)).sort((a, b) => a.order - b.order);
+
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
+  const hasMoreProjects = filteredProjects.length > 6;
+
+  const handleShowMoreClick = () => {
+    if (showAll) {
+      document.getElementById('projets').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setShowAll(!showAll);
+  };
 
   return (
     <section className={styles.projets} id="projets">
@@ -40,14 +58,13 @@ export default function Projets() {
         </div>
 
         <div className={styles.grid}>
-          {filteredProjects.map((projet, index) => (
+          {displayedProjects.map((projet, index) => (
             <motion.div
-              key={projet.id}
+              key={`${projet.id}-${selectedTag}`}
               className={styles.card}
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className={styles.imageContainer}>
                 <img src={projet.image} alt={projet.title} />
@@ -68,6 +85,16 @@ export default function Projets() {
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                       </svg>
                       Code source
+                    </a>
+                  )}
+                  {projet.downloadLink && (
+                    <a href={projet.downloadLink} download className={styles.link}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                      </svg>
+                      PDF
                     </a>
                   )}
                 </div>
@@ -102,6 +129,31 @@ export default function Projets() {
             </motion.div>
           ))}
         </div>
+
+        {hasMoreProjects && (
+          <div className={styles.viewMoreContainer}>
+            <button
+              className={styles.viewMoreButton}
+              onClick={handleShowMoreClick}
+            >
+              {showAll ? 'Voir moins' : `Voir plus (${filteredProjects.length - 6} projets)`}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                className={showAll ? styles.rotated : ''}
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

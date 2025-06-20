@@ -266,6 +266,41 @@
   font-weight: 500;
 }
 
+.viewMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.viewMoreButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 2px;
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .projets {
