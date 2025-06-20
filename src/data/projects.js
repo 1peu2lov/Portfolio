@@ -215,6 +215,6 @@ export const projects = [
     challenges: "Le principal défi était de créer une cohérence entre l'ADN authentique de RVCA et le concept innovant d'une plateforme streaming artistique, tout en respectant les codes visuels de la marque et en proposant une expérience adaptée à des créateurs de disciplines très différentes.",
     liveLink: "#",
     githubLink: "#",
-    downloadLink: "/pdf/livret_recherche_rvca.pdf" // Vous devrez ajouter ce PDF dans le dossier public/pdf/
+    downloadLink: "/pdf/livret_de_recherche_rvca.pdf"
   }
 ]; 
