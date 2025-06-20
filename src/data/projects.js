@@ -179,7 +179,7 @@ export const projects = [
       "Optimisation SEO & accessibilité"
     ],
     challenges: "Allier les codes du luxe et de l'artisanat avec une expérience digitale moderne a nécessité une attention particulière au design, à l'ergonomie et à la performance technique.",
-    liveLink: "https://tournis.netlify.app/",
+    liveLink: "#",
     githubLink: "#"
   },
   {
