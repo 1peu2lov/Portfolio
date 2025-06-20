@@ -9,7 +9,7 @@ import { projects } from '@/data/projects';
 export default function Projets() {
   const [selectedTag, setSelectedTag] = useState('Tous');
   const [showAll, setShowAll] = useState(false);
-  const tags = ['Tous', 'Dev', 'Design', 'Jeu', 'Projet 360°', 'UX/UI', 'Recherche', 'Print'];
+  const tags = ['Tous', 'Dev', 'Design', 'Jeu', 'Projet 360°', 'UX/UI'];
 
   useEffect(() => {
     setShowAll(false);

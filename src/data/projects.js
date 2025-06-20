@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "restaurant-app",
     title: "Restaurant App",
-    order: 7,
+    order: 8,
     description: "Application fictive de commande de repas, avec formulaire de paiement en pop-up et manipulation dynamique du DOM.",
     longDescription: `Une application web complète permettant aux utilisateurs de commander des repas en ligne. 
     L'interface utilisateur intuitive permet une navigation fluide entre les différentes catégories de plats.
@@ -185,8 +185,8 @@ export const projects = [
   {
     id: "livret-recherche-rvca",
     title: "Livret de Recherche - Marque Blanche RVCA",
-    order: 8,
-    description: "Mission fictive pour RVCA : création d'une marque blanche pour une plateforme de streaming dédiée aux créateurs artistiques (peinture, danse, illustration, surf).",
+    order: 3,
+    description: "Mission fictive pour RVCA : création d'une marque blanche pour une plateforme de streaming dédiée aux créateurs artistiques (peinture, danse, illustration, surf, etc.).",
     longDescription: `Dans le cadre d'une mission fictive pour RVCA, j'ai développé un livret de recherche complet pour la création d'une marque blanche.
     Le projet consistait à concevoir une plateforme de streaming innovante dédiée aux créateurs artistiques, englobant des disciplines variées :
     la peinture, la danse, l'illustration et le surf - ce dernier étant considéré comme un art à part entière.
@@ -194,8 +194,8 @@ export const projects = [
     Cette recherche approfondie explore l'identité visuelle de RVCA, ses valeurs liées à l'art et à la créativité, 
     et propose une stratégie de positionnement pour cette nouvelle plateforme streaming. Le livret détaille l'expérience utilisateur, 
     l'architecture de l'information et l'identité graphique de cette plateforme fictive.`,
-    technologies: ["Adobe Illustrator", "Adobe InDesign", "Design Graphique", "Recherche"],
-    tags: ["Design", "Recherche", "Print"],
+    technologies: ["Adobe Illustrator", "Adobe InDesign", "Veille Graphique"],
+    tags: ["Design", "Projet 360°"],
     image: "/img/livret_rvca.jpg", // Vous devrez ajouter cette image
     gallery: [
       "/img/livret_rvca.jpg",
