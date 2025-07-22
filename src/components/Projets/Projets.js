@@ -104,7 +104,7 @@ export default function Projets() {
                 <div className={styles.contentWrapper}>
                   <div className={styles.mainContent}>
                     <h3>{projet.title}</h3>
-                    {projet.id === "tournis" && <span className={styles.inProgress}>En cours</span>}
+    
                     <p className={styles.description}>{projet.description}</p>
                     <div className={styles.technologies}>
                       {projet.technologies.map((tech) => (

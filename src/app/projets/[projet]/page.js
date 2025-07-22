@@ -23,7 +23,7 @@ export default function ProjetPage({ params }) {
             ← Retour aux projets
           </Link>
           <h1>{project.title}</h1>
-          {project.id === "tournis" && <span className={styles.inProgress}>En cours</span>}
+          
           <div className={styles.tags}>
             {project.tags.map((tag) => (
               <span key={tag} className={styles.tag}>{tag}</span>

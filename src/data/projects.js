@@ -9,7 +9,7 @@ export const projects = [
     Le système de panier dynamique met à jour instantanément les totaux et les quantités.
     Le formulaire de paiement en pop-up offre une expérience de checkout sans friction.`,
     technologies: ["HTML", "CSS", "JavaScript"],
-    tags: ["Dev", "Design"],
+    tags: ["Dev"],
     image: "/img/Restaurant_app.JPG",
     gallery: [
       "/img/Restaurant_app.JPG",
@@ -28,7 +28,7 @@ export const projects = [
   {
     id: "twimba",
     title: "Twimba",
-    order: 2,
+    order: 7,
     description: "Clone de Twitter permettant de poster des tweets, avec sauvegarde locale grâce au localStorage.",
     longDescription: `Une réplique des fonctionnalités principales de Twitter, permettant aux utilisateurs de poster, 
     liker et retweeter du contenu. Les données sont persistantes grâce à l'utilisation du localStorage.
@@ -59,7 +59,7 @@ export const projects = [
     Les utilisateurs peuvent choisir la difficulté et la catégorie des questions.
     Le système de score intégré permet de suivre ses performances et de les comparer.`,
     technologies: ["HTML", "CSS", "JavaScript", "React.js", "API"],
-    tags: ["Dev", "Design","Jeu"],
+    tags: ["Dev","Jeu"],
     image: "/img/quizzical_app.JPG",
     gallery: [
       "/img/quizzical_app.JPG",
@@ -179,8 +179,8 @@ export const projects = [
       "Optimisation SEO & accessibilité"
     ],
     challenges: "Allier les codes du luxe et de l'artisanat avec une expérience digitale moderne a nécessité une attention particulière au design, à l'ergonomie et à la performance technique.",
-    liveLink: "#",
-    githubLink: "#"
+    liveLink: "https://tournis.netlify.app/",
+    githubLink: "https://github.com/1peu2lov/Joaillerie-Tournis"
   },
   {
     id: "livret-recherche-rvca",
@@ -216,5 +216,65 @@ export const projects = [
     liveLink: "#",
     githubLink: "#",
     downloadLink: "/pdf/livret_de_recherche_rvca.pdf"
+  },
+  {
+    id: "e-den",
+    title: "E-DEN",
+    order: 2,
+    description: "Plateforme étudiante & freelance rassemblant les créatifs autour de projets collaboratifs. Maquettage complet sur Figma avec focus UX/UI.",
+    longDescription: `E-DEN est un concept innovant de plateforme destinée à rassembler étudiants et freelances autour de projets créatifs. 
+    Elle vise à créer une communauté active, sécurisée et inspirante, où chacun peut partager ses idées, échanger, collaborer et se faire remarquer.
+    Le projet met l'accent sur une expérience utilisateur fluide et intuitive, tout en valorisant la diversité des profils et des créations.
+    La plateforme intègre des fonctionnalités communautaires avancées.`,
+    technologies: ["Figma", "UX/UI Design", "Design System"],
+    tags: ["Design", "UX/UI", "Projet 360°"],
+    image: "/img/eden.JPG", // À ajouter
+    gallery: [
+      "/img/e_den.JPG",
+      "/img/e_den_accueil.JPG",
+      "/img/e_den_profil.JPG"
+    ],
+    features: [
+      "Maquettes haute-fidélité complètes",
+      "Composants interactifs (carrousels, toggles, animations)",
+      "Structuration du parcours utilisateur",
+      "Guidelines UI cohérentes",
+      "Fonctionnalités communautaires intégrées",
+      "Système de rôles et modération",
+      "Interface responsive et accessible"
+    ],
+    challenges: "Le principal défi était de concevoir une plateforme qui favorise l'interaction et la collaboration entre des profils très variés (étudiants/freelances) tout en maintenant un environnement sécurisé et une expérience utilisateur fluide pour tous les types d'utilisateurs.",
+    liveLink: "https://www.figma.com/design/IX7jAryiPqtq2j7II4KlUg/E-den?node-id=290-177&t=lvWZIO1WVMbZ4Cns-1",
+    githubLink: "#"
+  },
+  {
+    id: "del-arte-rebranding",
+    title: "Rebranding Del Arte",
+    order: 9,
+    description: "Refonte complète de l'identité visuelle de Del Arte pour marquer un changement de positionnement stratégique de la marque.",
+    longDescription: `Projet de rebranding complet de la chaîne de restauration Del Arte, visant à moderniser et repositionner la marque sur son marché.
+    Ce projet stratégique avait pour objectif de créer une nouvelle identité visuelle qui reflète les valeurs renouvelées de l'enseigne.
+    La refonte englobait l'ensemble des éléments graphiques : logo, typographie, palette colorimétrique et déclinaisons.
+    Le travail s'est concentré sur la création d'un univers visuel cohérent et impactant pour accompagner la transformation de la marque.`,
+    technologies: ["Adobe Illustrator", "Branding", "Identité Visuelle"],
+    tags: ["Design"],
+    image: "/img/del_arte_brandboard.webp",
+    gallery: [
+      "/img/del_arte_brandboard.webp",
+      "/img/del_arte_logo.webp",
+      "/img/del_arte_declinaisons.webp"
+    ],
+    features: [
+      "Refonte complète du logo",
+      "Nouvelle palette de couleurs",
+      "Typographie sur mesure",
+      "Guidelines d'identité visuelle",
+      "Déclinaisons multi-supports",
+      "Brandboard complet",
+      "Positionnement stratégique renouvelé"
+    ],
+    challenges: "Le principal défi était de marquer visuellement le changement de positionnement de la marque tout en conservant une certaine reconnaissance auprès des clients existants, nécessitant un équilibre délicat entre innovation et continuité.",
+    liveLink: "#",
+    githubLink: "#"
   }
 ]; 
