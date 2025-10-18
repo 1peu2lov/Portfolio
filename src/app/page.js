@@ -139,6 +139,16 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          <motion.div className={styles.cta} variants={itemVariants}>
+            <a
+              href="https://tournis.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ctaButton}
+            >
+              Voir mon dernier site créé — Maison Tournis
+            </a>
+          </motion.div>
         </motion.div>
         <motion.div 
           className={styles.imageWrapper}

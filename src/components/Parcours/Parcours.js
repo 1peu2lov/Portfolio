@@ -9,9 +9,9 @@ export default function Parcours() {
 
   const formationData = [
     {
-      title: "Développement Web & Web Design (2ᵉ année)",
+      title: "Développement Web & Web Design (3ᵉ année)",
       date: "2024 - Présent",
-      description: "Études en développement web full stack et design d'interface à Digital Campus."
+      description: "Études en développement web et design d'interface à Digital Campus."
     },
     {
       title: "Certification Développeur Web Front-End",
@@ -33,9 +33,9 @@ export default function Parcours() {
 
   const experienceData = [
   {
-    title: "Développeur React Native (Stage)",
-    date: "Avril 2025 - Présent",
-    description: "Aide au développement d’une application mobile en React Native chez Silia."
+    title: "Développeur React (Stage) chez Silia",
+    date: "Avril 2025 -Septembre 2025",
+    description: "Aide au développement d’une application mobile en React Native, ainsi qu'à la création de maquettes Figma."
   },
   {
     title: "Barista - French Coffee Shop",

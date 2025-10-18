@@ -244,7 +244,7 @@ export const projects = [
       "Interface responsive et accessible"
     ],
     challenges: "Le principal défi était de concevoir une plateforme qui favorise l'interaction et la collaboration entre des profils très variés (étudiants/freelances) tout en maintenant un environnement sécurisé et une expérience utilisateur fluide pour tous les types d'utilisateurs.",
-    liveLink: "https://www.figma.com/design/IX7jAryiPqtq2j7II4KlUg/E-den?node-id=290-177&t=lvWZIO1WVMbZ4Cns-1",
+    liveLink: "https://www.figma.com/design/IX7jAryiPqtq2j7II4KlUg/E-den?node-id=290-581&p=f",
     githubLink: "#"
   },
   {
